@@ -1,0 +1,23 @@
+.section{
+    border-bottom-width: 2px;
+    padding: 15px;
+    min-width: 200px;
+    cursor: pointer;
+    border-width: 0px !important;
+    color: gray;
+    font-weight: 600;
+}
+.section--selected{
+    background-color: whitesmoke;
+    border-width: 3px !important;
+}
+.section:hover{
+    background-color: whitesmoke;
+    border-width: 3px !important;
+}
+.section h4{
+    padding: 0;
+    margin: 0;
+    font-size:16px ;
+    margin-left: 20px;
+}
