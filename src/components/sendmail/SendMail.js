@@ -3,14 +3,18 @@ import "./SendMail.css";
 import CloseIcon from "@material-ui/icons/Close";
 import { Button } from "@material-ui/core";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { closeSendMessage } from "../../features/mailSlice";
 
 function SendMail() {
+  const dispatch = useDispatch();
   const {
     register,
     formState: { errors },
     handleSubmit,
     watch,
   } = useForm();
+
   const onSubmit = (d) => {
     console.log(d);
   };
@@ -18,13 +22,16 @@ function SendMail() {
     <div className="sendMail">
       <div className="sendMail__header">
         <h3>New Message</h3>
-        <CloseIcon className="closeIcon" />
+        <CloseIcon
+          className="closeIcon"
+          onClick={() => dispatch(closeSendMessage())}
+        />
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           {...register("to", { required: true })}
           placeholder="To"
-          type="text"
+          type="email"
         />
         {errors.to?.type === "required" && (
           <p className="sendMail__error"> To is required</p>

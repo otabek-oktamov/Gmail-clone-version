@@ -10,11 +10,14 @@ import React, { useState } from "react";
 import "./Sidebar.css";
 import SidebarOption from "../sidebarOption/SidebarOption";
 import { IconButton } from "@material-ui/core";
-import PersonIcon from '@material-ui/icons/Person';
-import DuoIcon from '@material-ui/icons/Duo';
-import PhoneIcon from '@material-ui/icons/Phone';
+import PersonIcon from "@material-ui/icons/Person";
+import DuoIcon from "@material-ui/icons/Duo";
+import PhoneIcon from "@material-ui/icons/Phone";
+import { useDispatch } from "react-redux";
+import { openSendMessage } from "../../features/mailSlice";
 
 function Sidebar() {
+  const dispatch = useDispatch();
   return (
     <div className="sidebar">
       <Button
@@ -22,6 +25,7 @@ function Sidebar() {
         startIcon={
           <img src="https://www.gstatic.com/images/icons/material/colored_icons/1x/create_32dp.png" />
         }
+        onClick={() => dispatch(openSendMessage())}
       >
         Compose
       </Button>
@@ -49,15 +53,15 @@ function Sidebar() {
       </ul>
       <div className="sidebar__footer">
         <div className="sidebar__footerIcons">
-<IconButton>
-  <PersonIcon/>
-</IconButton>
-<IconButton>
-  <DuoIcon/>
-</IconButton>
-<IconButton>
-  <PhoneIcon/>
-</IconButton>
+          <IconButton>
+            <PersonIcon />
+          </IconButton>
+          <IconButton>
+            <DuoIcon />
+          </IconButton>
+          <IconButton>
+            <PhoneIcon />
+          </IconButton>
         </div>
       </div>
     </div>
