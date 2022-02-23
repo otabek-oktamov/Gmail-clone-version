@@ -57,15 +57,22 @@ function Mail() {
           </IconButton>
         </div>
       </div>
-  <div className="mail__body">
-    <div className="mail__bodyHeader">
-      <h2 className="subkect">Subject</h2>
-      <LabelImportantIcon className='mail__important'/>
-      <p>title</p>
-      <p className="mail__time">10pm</p>
-    </div>
-    <div className="mail__message"><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis, quod quos cupiditate quas optio magni maiores voluptatum id accusantium dolores quidem repudiandae, vel fugit vero ab perspiciatis ducimus! Quo, quaerat.</p></div>
-  </div>
+      <div className="mail__body">
+        <div className="mail__bodyHeader">
+          <h2 className="subkect">Subject</h2>
+          <LabelImportantIcon className="mail__important" />
+          <p>title</p>
+          <p className="mail__time">10pm</p>
+        </div>
+        <div className="mail__message">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis,
+            quod quos cupiditate quas optio magni maiores voluptatum id
+            accusantium dolores quidem repudiandae, vel fugit vero ab
+            perspiciatis ducimus! Quo, quaerat.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
