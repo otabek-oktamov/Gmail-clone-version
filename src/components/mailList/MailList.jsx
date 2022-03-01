@@ -14,16 +14,13 @@ import "./MailList.css";
 import Section from "../section/Section";
 import MailRow from "../mailRow/MailRow";
 import { useState, useEffect } from "react";
-import db from "../../firebase";
-
-
-
+import { db } from "../../firebase";
 
 function MailList() {
   const [emails, setEmails] = useState();
   useEffect(() => {
     db.collection("emails")
-      .orderBy("timestap", "desc")
+      .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) =>
         setEmails(
           snapshot.docs.map((doc) => ({
@@ -79,6 +76,16 @@ function MailList() {
         />
       </div>
       <div className="mailList__list">
+        {emails?.map(({ id, data: { to, subject, message, timestamp } }) => (
+          <MailRow
+            id={id}
+            key={id}
+            title={to}
+            subject={subject}
+            description={message}
+            data={new Date(timestamp?.seconds * 1000).toUTCString()}
+          />
+        ))}
         <MailRow
           title={"Twitch"}
           subject={"Hey fellow streamer !!!"}

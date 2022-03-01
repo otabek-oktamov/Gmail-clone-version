@@ -4,9 +4,23 @@ import StarBorderOutlinedIcon from "@material-ui/icons/StarBorderOutlined";
 import React from "react";
 import { useHistory } from "react-router-dom";
 import "./MailRow.css";
-
+import { useDispatch } from "react-redux";
+import { selectMail } from "../../features/mailSlice";
 function MailRow({ id, title, subject, description, data }) {
-  const history = useHistory()
+  const history = useHistory();
+  const distpatch = useDispatch();
+  const openMail = () => {
+    distpatch(
+      selectMail({
+        id,
+        title,
+        subject,
+        description,
+        data,
+      })
+    );
+    history.push("/mail");
+  };
   return (
     <div className="mailRow">
       <div className="mailRow__options">
@@ -18,16 +32,16 @@ function MailRow({ id, title, subject, description, data }) {
           <LabelImportantIcon />
         </IconButton>
       </div>
-    <div className="mailRow__main" onClick={()=> history.push('/mail')}>
-    <h3 className="mailRow__title">{title}</h3>
-      <div className="mailRow__subject">
-        <h4>
-          {subject} -{" "}
-          <span className="mailRow__description">{description}</span>
-        </h4>
+      <div className="mailRow__main" onClick={openMail}>
+        <h3 className="mailRow__title">{title}</h3>
+        <div className="mailRow__subject">
+          <h4>
+            {subject} -{" "}
+            <span className="mailRow__description">{description}</span>
+          </h4>
+        </div>
+        <div className="mailRow__data">{data}</div>
       </div>
-      <div className="mailRow__data">{data}</div>
-    </div>
     </div>
   );
 }

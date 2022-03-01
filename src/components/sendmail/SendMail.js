@@ -22,7 +22,7 @@ function SendMail() {
       to: FormData.to,
       subject: FormData.subject,
       message: FormData.message,
-      timestamo: firebase.firestore.FieldValue.serverTimestamp(),
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
 
     dispatch(closeSendMessage());
