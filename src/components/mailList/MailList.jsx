@@ -13,7 +13,26 @@ import React from "react";
 import "./MailList.css";
 import Section from "../section/Section";
 import MailRow from "../mailRow/MailRow";
+import { useState, useEffect } from "react";
+import db from "../../firebase";
+
+
+
+
 function MailList() {
+  const [emails, setEmails] = useState();
+  useEffect(() => {
+    db.collection("emails")
+      .orderBy("timestap", "desc")
+      .onSnapshot((snapshot) =>
+        setEmails(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+          }))
+        )
+      );
+  }, []);
   return (
     <div className="mailList">
       <div className="mailList__settings">
@@ -60,7 +79,12 @@ function MailList() {
         />
       </div>
       <div className="mailList__list">
-        <MailRow title={'Twitch'} subject={'Hey fellow streamer !!!'}  description={'this is a test'} data={'10pm'}/>
+        <MailRow
+          title={"Twitch"}
+          subject={"Hey fellow streamer !!!"}
+          description={"this is a test"}
+          data={"10pm"}
+        />
       </div>
     </div>
   );
