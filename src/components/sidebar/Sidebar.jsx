@@ -6,7 +6,7 @@ import DescriptionIcon from "@material-ui/icons/Description";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import InboxIcon from "@material-ui/icons/Inbox";
 import LabelImportantIcon from "@material-ui/icons/LabelImportant";
-import React, { useState } from "react";
+import React from "react";
 import "./Sidebar.css";
 import SidebarOption from "../sidebarOption/SidebarOption";
 import { IconButton } from "@material-ui/core";

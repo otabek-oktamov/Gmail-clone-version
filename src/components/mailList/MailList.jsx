@@ -86,12 +86,6 @@ function MailList() {
             data={new Date(timestamp?.seconds * 1000).toUTCString()}
           />
         ))}
-        <MailRow
-          title={"Twitch"}
-          subject={"Hey fellow streamer !!!"}
-          description={"this is a test"}
-          data={"10pm"}
-        />
       </div>
     </div>
   );

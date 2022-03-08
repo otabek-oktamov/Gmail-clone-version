@@ -13,7 +13,6 @@ function SendMail() {
     register,
     formState: { errors },
     handleSubmit,
-    watch,
   } = useForm();
 
   const onSubmit = (FormData) => {

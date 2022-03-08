@@ -1,16 +1,21 @@
-*{
-    margin:0;
-    padding:0;
+* {
+  margin: 0;
+  padding: 0;
 }
-.app__body{
-   flex: 1;
-   display: flex;
+.app {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
-.sidebar{
-    width: 17%;
-    padding-right: 20px;
+.app__body {
+  flex: 1;
+  display: flex;
 }
-.mailList{
-    padding-left: 20px;
-    width: 80%;
+.sidebar {
+  width: 17%;
+  padding-right: 20px;
+}
+.mailList {
+  padding-left: 20px;
+  width: 80%;
 }
