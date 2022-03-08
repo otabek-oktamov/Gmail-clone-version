@@ -30,7 +30,7 @@ function App() {
         );
       }
     });
-  }, [auth]);
+  });
   return (
     <Router>
       {!user ? (
