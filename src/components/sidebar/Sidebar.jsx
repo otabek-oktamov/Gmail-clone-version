@@ -23,7 +23,10 @@ function Sidebar() {
       <Button
         className={"compose"}
         startIcon={
-          <img src="https://www.gstatic.com/images/icons/material/colored_icons/1x/create_32dp.png" />
+          <img
+            alt="img"
+            src="https://www.gstatic.com/images/icons/material/colored_icons/1x/create_32dp.png"
+          />
         }
         onClick={() => dispatch(openSendMessage())}
       >
